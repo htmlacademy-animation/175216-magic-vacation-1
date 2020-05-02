@@ -1,6 +1,6 @@
-@mixin socialTransition($property) {
+@mixin socialTransition($prop) {
   transition:
-    opacity 200ms ease-in $property,
+    opacity 200ms ease-in $prop,
     color 200ms ease-in,
     background-color 200ms ease-in,
     border-color 150ms ease-in;

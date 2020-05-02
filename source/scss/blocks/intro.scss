@@ -95,7 +95,12 @@
   font-size: 2.4rem;
   line-height: 1.27;
   opacity: 1;
-  animation: messageFadeIn 300ms ease-in;
+
+  @include fadeInWithTransition(
+    $animationName: introMessageFadeIn,
+    $duration: 300ms,
+    $verticalShift: 20px,
+  );
 
   @media (min-width: $stop-scaling) {
     width: 509px;
@@ -163,17 +168,5 @@
   @media (min-width: $stop-scaling) {
     margin: 0 0 0 -5px;
     font-size: 48px;
-  }
-}
-
-@keyframes messageFadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
