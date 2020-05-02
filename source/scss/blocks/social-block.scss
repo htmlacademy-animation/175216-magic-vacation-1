@@ -1,3 +1,11 @@
+@mixin socialTransition($property) {
+  transition:
+    opacity 200ms ease-in $property,
+    color 200ms ease-in,
+    background-color 200ms ease-in,
+    border-color 150ms ease-in;
+}
+
 .social-block {
   position: relative;
 
@@ -17,6 +25,7 @@
   height: 4rem;
   color: $c-dark;
   border-radius: 50%;
+  transition: color 200ms ease-in;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
@@ -35,6 +44,7 @@
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
+    transition: transform 100ms ease-in, border-color 150ms ease-in;
   }
 
   svg {
@@ -49,8 +59,7 @@
     color: $c-purple;
 
     &::before {
-      width: 112.5%;
-      height: 112.5%;
+      transform: translate(-50%, -50%) scale(1.125);
     }
   }
 
@@ -89,6 +98,7 @@
   margin-top: 1.5rem;
   opacity: 0;
   pointer-events: none;
+  transition: opacity 200ms ease-in;
 
   @media (min-width: $stop-scaling) {
     margin-top: 15px;
@@ -168,6 +178,12 @@
   color: $c-light;
   border: 2px solid transparent;
   border-radius: 50%;
+  opacity: 0;
+
+  &:hover,
+  .social-block--active & {
+    opacity: 1;
+  }
 
   @media (min-width: $stop-scaling) {
     width: 40px;
@@ -207,6 +223,8 @@
   }
 
   &--fb {
+    @include socialTransition(50ms);
+
     svg {
       width: 0.8rem;
       height: 1.7rem;
@@ -219,6 +237,8 @@
   }
 
   &--insta {
+    @include socialTransition(150ms);
+
     svg {
       width: 1.5rem;
       height: 1.5rem;
@@ -231,6 +251,8 @@
   }
 
   &--vk {
+    @include socialTransition(250ms);
+
     svg {
       width: 1.7rem;
       height: 1rem;
