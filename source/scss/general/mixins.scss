@@ -58,3 +58,50 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@mixin keyframes($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin fadeInKeyFrames(
+  $animationName,
+  $horisontalShift,
+  $verticalShift,
+  $duration,
+  $delay,
+  $bezierFunc,
+) {
+  @include keyframes($animationName) {
+    0% {
+      opacity: 0;
+      transform: translate($horisontalShift, $verticalShift);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
+
+  animation: $animationName $duration $bezierFunc $delay;
+}
+
+@mixin fadeInWithTransition(
+  $animationName,
+  $horisontalShift: 0,
+  $verticalShift: 0,
+  $duration: 200ms,
+  $delay: 0ms,
+  $bezierFunc: ease-in,
+) {
+  @include fadeInKeyFrames(
+    $animationName,
+    $horisontalShift,
+    $verticalShift,
+    $duration,
+    $delay,
+    $bezierFunc,
+  );
+}
