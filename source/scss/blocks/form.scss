@@ -67,6 +67,12 @@
   outline: none;
   animation: formFadeIn 300ms ease-in;
 
+  @include fadeInWithTransition(
+    $animationName: formFieldFadeIn,
+    $horisontalShift: 100%,
+    $duration: 300ms,
+  );
+
   &:focus {
     border: 1px solid $c-purple;
   }
@@ -160,15 +166,5 @@
     @media (max-width: $mobile) and (orientation: landscape) {
       width: calc(100% - 5rem);
     }
-  }
-}
-
-@keyframes formFadeIn {
-  0% {
-    transform: translateX(100%);
-  }
-
-  100% {
-    transform: translateX(0);
   }
 }

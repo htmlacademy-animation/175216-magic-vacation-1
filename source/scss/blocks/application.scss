@@ -1,0 +1,31 @@
+.body--loaded {
+  .page-header__logo {
+    opacity: 1;
+
+    @include fadeInWithTransition(
+      $animationName: pageLogoFadeIn,
+      $duration: 300ms,
+      $horisontalShift: -3rem,
+      $bezierFunc: $fadeInBezier,
+    );
+  }
+
+  .page-header__nav {
+    opacity: 1;
+  }
+
+  .page-header__social {
+    opacity: 1;
+  }
+
+  .screen__footer {
+    opacity: 1;
+
+    @include fadeInWithTransition(
+      $animationName: footerFadeIn,
+      $duration: 300ms,
+      $verticalShift: 30px,
+      $bezierFunc: $fadeInBezier,
+    );
+  }
+}
