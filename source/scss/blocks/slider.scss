@@ -95,6 +95,8 @@
   max-width: 34rem;
   font-size: 1.8rem;
   line-height: 2rem;
+  opacity: 0;
+  transition: transform 300ms ease-in 400ms, opacity 300ms ease-in 300ms;
 
   @media (min-width: $stop-scaling) {
     margin-top: 36px;

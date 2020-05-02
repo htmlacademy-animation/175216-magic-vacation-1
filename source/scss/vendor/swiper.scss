@@ -527,3 +527,34 @@ button.swiper-pagination-bullet {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
 }
+
+.swiper-wrapper {
+  .swiper-slide {
+    &.slider__item {
+      &:nth-child(odd) {
+        .slider__item-text {
+          transform: translateX(30px);
+        }
+      }
+
+      &:nth-child(even) {
+        .slider__item-text {
+          transform: translateX(-30px);
+        }
+      }
+    }
+
+    &-active,
+    &-next {
+      &.slider__item {
+        &:nth-child(odd),
+        &:nth-child(even) {
+          .slider__item-text {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+      }
+    }
+  }
+}
