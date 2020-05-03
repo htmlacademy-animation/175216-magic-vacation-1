@@ -69,13 +69,14 @@
   $animationName,
   $horisontalShift,
   $verticalShift,
+  $startOpacity,
   $duration,
   $delay,
   $bezierFunc,
 ) {
   @include keyframes($animationName) {
     0% {
-      opacity: 0;
+      opacity: $startOpacity;
       transform: translate($horisontalShift, $verticalShift);
     }
 
@@ -92,6 +93,7 @@
   $animationName,
   $horisontalShift: 0,
   $verticalShift: 0,
+  $startOpacity: 0,
   $duration: 200ms,
   $delay: 0ms,
   $bezierFunc: ease-in,
@@ -100,6 +102,7 @@
     $animationName,
     $horisontalShift,
     $verticalShift,
+    $startOpacity,
     $duration,
     $delay,
     $bezierFunc,
