@@ -1,4 +1,4 @@
-import throttle from 'lodash/throttle';
+// import throttle from 'lodash/throttle';
 
 export const HOME_SCREEN_ID = 0;
 export const STORY_SCREEN_ID = 1;
@@ -24,7 +24,8 @@ export default class FullPageScroll {
   }
 
   init() {
-    document.addEventListener(`wheel`, throttle(this.onScrollHandler, this.THROTTLE_TIMEOUT));
+    // временнно отключил переключение страниц по скролу, а то бесит
+    // document.addEventListener(`wheel`, throttle(this.onScrollHandler, this.THROTTLE_TIMEOUT));
     window.addEventListener(`popstate`, this.onUrlHashChengedHandler);
 
     this.onUrlHashChenged();
