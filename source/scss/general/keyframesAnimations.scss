@@ -1,0 +1,38 @@
+@keyframes rulesItemNumberFadeIn {
+  0% {
+    color: transparent;
+    transform: scale(0);
+  }
+
+  30% {
+    color: transparent;
+  }
+
+  85% {
+    transform: scale(1.25);
+    color: $c-light;
+  }
+
+  100% {
+    transform: scale(1);
+    color: $c-light;
+  }
+}
+
+
+@keyframes rulesItemTitleFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  85% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
