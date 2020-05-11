@@ -256,11 +256,6 @@
       right: 0;
       transition: width 250ms ease-in;
 
-      @media (min-width: $stop-scaling) {
-        left: -5px;
-        right: -5px;
-      }
-
       @media (max-width: $tablet) and (orientation: portrait) {
         left: 0;
         right: 0;
