@@ -149,6 +149,12 @@
   text-transform: uppercase;
   font-size: 2.4rem;
   line-height: 1.2;
+  opacity: 0;
+  transition: opacity 300ms ease-in;
+
+  &.animated {
+    opacity: 1;
+  }
 
   @media (min-width: $stop-scaling) {
     margin: 0 0 16px;
@@ -158,6 +164,7 @@
 }
 
 .intro__date {
+  display: flex;
   margin: 0 0 0 -0.5rem;
   font-family: $font-alt;
   font-weight: 400;
