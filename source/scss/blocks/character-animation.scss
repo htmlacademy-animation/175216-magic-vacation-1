@@ -1,0 +1,21 @@
+.character-animated {
+  &__word {
+    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-top: 20px;
+    margin-top: -20px;
+
+    &__letter {
+      transform: translate3d(0, 1.3em, 0);
+
+      &.last {
+        padding-right: 10px;
+      }
+
+      .character-animated.animated & {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+  }
+}
