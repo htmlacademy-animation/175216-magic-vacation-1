@@ -296,6 +296,22 @@
   background-size: cover;
   background-position: center;
 
+  &.active {
+    .slider__control--prev,
+    .slider__control--next {
+      animation-duration: 1000ms;
+      animation-timing-function: $fadeInBezier;
+    }
+
+    .slider__control--prev {
+      animation-name: sliderButtonRollPrev;
+    }
+
+    .slider__control--next {
+      animation-name: sliderButtonRollNext;
+    }
+  }
+
   @media (orientation: portrait) {
     background-size: auto calc(100vh - 13.8rem), 100% 25rem;
     background-position: top center, bottom center;
