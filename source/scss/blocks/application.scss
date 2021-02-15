@@ -20,12 +20,5 @@
 
   .screen__footer {
     opacity: 1;
-
-    @include fadeInWithTransition(
-      $animationName: footerFadeIn,
-      $duration: 300ms,
-      $verticalShift: 30px,
-      $bezierFunc: $fadeInBezier,
-    );
   }
 }
