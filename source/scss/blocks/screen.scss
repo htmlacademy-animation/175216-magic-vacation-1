@@ -48,14 +48,38 @@
   z-index: 1;
   opacity: 0;
 
+  @include fadeInWithTransition(
+    $animationName: footerFadeIn,
+    $duration: 600ms,
+    $verticalShift: 100%,
+    $bezierFunc: $footerBezier,
+  );
+  animation-fill-mode: both;
+
   @media (max-width: $tablet) and (orientation: portrait) {
     width: 3.5rem;
     height: 3.5rem;
     border-radius: 0 3.6rem 0 0;
 
     &.screen__footer--full {
-      width: 100%;
-      height: 18rem;
+      animation-name: footerTablet;
+      animation-duration: 500ms;
+      animation-fill-mode: both;
+      animation-iteration-count: 1;
+    }
+
+    &.screen__footer--small {
+      animation-name: footerTabletR;
+      animation-duration: 500ms;
+      animation-fill-mode: both;
+
+      .screen__footer-enlarge {
+        opacity: 0;
+        animation-name: fade;
+        animation-duration: 500ms;
+        animation-delay: 400ms;
+        animation-fill-mode: both;
+      }
     }
   }
 
@@ -65,8 +89,23 @@
     border-radius: 0 3.6rem 0 0;
 
     &.screen__footer--full {
-      width: 100%;
-      height: 16rem;
+      animation-name: footerMobile;
+      animation-duration: 500ms;
+      animation-fill-mode: both;
+    }
+
+    &.screen__footer--small {
+      animation-name: footerMobileR;
+      animation-duration: 500ms;
+      animation-fill-mode: both;
+
+      .screen__footer-enlarge {
+        opacity: 0;
+        animation-name: fade;
+        animation-duration: 500ms;
+        animation-delay: 400ms;
+        animation-fill-mode: both;
+      }
     }
   }
 }
@@ -295,6 +334,22 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+
+  &.active {
+    .slider__control--prev,
+    .slider__control--next {
+      animation-duration: 1000ms;
+      animation-timing-function: $fadeInBezier;
+    }
+
+    .slider__control--prev {
+      animation-name: sliderButtonRollPrev;
+    }
+
+    .slider__control--next {
+      animation-name: sliderButtonRollNext;
+    }
+  }
 
   @media (orientation: portrait) {
     background-size: auto calc(100vh - 13.8rem), 100% 25rem;

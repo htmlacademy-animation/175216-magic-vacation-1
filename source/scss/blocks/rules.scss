@@ -223,7 +223,7 @@
   opacity: 0;
   width: 0;
   color: transparent;
-  transition: width 200ms ease-in, color 200ms ease-in 150ms;
+  transition: width 300ms ease-in, color 200ms ease-in 150ms;
   pointer-events: none;
 
   &--show {

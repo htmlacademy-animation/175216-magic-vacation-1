@@ -1,3 +1,13 @@
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 @keyframes rulesItemNumberFadeIn {
   0% {
     color: transparent;
@@ -34,5 +44,86 @@
   100% {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@keyframes sliderButtonRollPrev {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px) rotate(-180deg);
+  }
+
+  80% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 0.5;
+    transform: translateX(0) rotate(0);
+  }
+}
+
+@keyframes sliderButtonRollNext {
+  0% {
+    opacity: 0;
+    transform: translateX(100px) rotate(180deg);
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(0);
+  }
+}
+
+@keyframes footerTablet {
+  from {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  to {
+    width: 100%;
+    height: 18rem;
+  }
+}
+
+@keyframes footerTabletR {
+  from {
+    width: 100%;
+    height: 18rem;
+  }
+
+  to {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}
+
+
+@keyframes footerMobile {
+  from {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  to {
+    width: 100%;
+    height: 16rem;
+  }
+}
+
+@keyframes footerMobileR {
+  from {
+    width: 100%;
+    height: 16rem;
+  }
+
+  to {
+    width: 3.5rem;
+    height: 3.5rem;
   }
 }
